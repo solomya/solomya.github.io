@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шифрование</title>
+
+    <!-- Подключение шрифтов on-line -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/normalize.css">   <!-- Подключение normalize.css ОБЯЗАТЕЛЬНО ДО файла с нашими стилями -->
+    <link rel="stylesheet" href="css/modal.css">    <!-- Для работы с модальными окнами -->
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <script src="js/jquery-3.7.1.js"></script>  <!-- Подключать БЕЗ defer (загружать в фоносом режиме), иначе не срабатывает -->
+</head>
+<body>   
+    <section class="game_field">
+        <div class="game_field-header">
+            <button class="game_field-header-btn" id = "checkBtn">ПРОВЕРИТЬ</button>
+             <div class="game_field-title_subtitle">
+                <h1 class="game_field-title">Секретные материалы</h1>
+                <div class="game_field-subtitle">ЗАДАНИЕ: Помоги детективам расшифровать записку.</div>
+             </div>
+            <button  class="game_field-header-btn" id="againBtn">НАЧАТЬ ЗАНОВО</button>
+        </div>
+
+        <div class="game_field-wrapper">
+            <div class="encryption-mainpart">
+                <div class="encryption-mainpart-riddle">
+                    <!-- Выводим шифр через js -->
+                </div>
+
+                <div class="encryption-mainpart-riddlesolution">
+                    <div class="encryption-mainpart-riddlesolution-label">Ответ:</div>
+                    <div class="encryption-mainpart-riddlesolution-explanation">(Запиши ответ, перетягивая буквы из блока слева)</div>
+
+                    <div class="encryption-mainpart-riddlesolution-answer" id="answer"></div>
+                </div>
+            </div>
+                
+            <div class="encryption-alphabet">
+                <!-- Выводим алфавит через js -->
+            </div>
+
+            <div class="encryption-illustration">
+                <img src="img/encryption/detectives-transpBG.png" alt="detectives">
+            </div>
+        </div>
+    </section>
+
+
+    <script src="js/modal.js"></script>
+    <script type="module" src="js/encryption.js"></script>
+</body>
+</html>

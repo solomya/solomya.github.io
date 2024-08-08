@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solomya school</title>
+
+    <!-- Подключение шрифтов on-line -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/normalize.css">   <!-- Подключение normalize.css ОБЯЗАТЕЛЬНО ДО файла с нашими стилями -->
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <script src="js/jquery-3.7.1.js"></script>  <!-- Подключать БЕЗ defer (загружать в фоносом режиме), иначе не срабатывает -->
+</head>
+
+<body>
+<!-- Верхнее меню выводим из файла topmenu.html -->
+    <div id="includedContent"></div>
+
+    <aside> <!-- Боковая панель (сайдбар) -->
+        <nav class="sidebar">
+          <ul>
+            <li><a href="#">Гуляем по городу</a></li>
+                <ul>
+                    <li><a href="#">Торговый квартал</a></li>
+                </ul>
+            <li><a href="#">Отдыхаем на острове</a></li>
+            <li><a href="#">Игры</a></li>
+                <ul>
+                    <li>
+                        <a href="#"  onClick="fullScreen2('city-shopping-goodsshops.html');return false;">Товары и магазины</a>
+                    </li>
+                    <li>
+                        <a href="#"  onClick="fullScreen2('city-shopping-shoppinglist.html');return false;">Список покупок</a>
+                    </li>
+                    <li>
+                        <a href="#" onClick="fullScreen2('city-shopping-hesheit.html');return false;">ОН/ОНА/ОНО</a>
+                    </li>
+                    <li>
+                        <a href="#" onClick="fullScreen2('city-shopping-hesheit-HW.html');return false;">ОН/ОНА/ОНО (ДЗ)</a>
+                    </li>
+                    <li>
+                        <a href="#" onClick="fullScreen2('city-shopping-onemany.html');return false;">Один и много</a>
+                    </li>
+                    <li>
+                        <a href="#" onClick="fullScreen2('city-shopping-toyshopstory.html');return false;">История одного магазина игрушек</a>
+                    </li>
+                    <a href="#" onClick="fullScreen2('city-shopping-encryption.html');return false;">Шифровка</a>
+
+                </ul>
+          </ul>
+        </nav>
+    </aside>
+
+    <main> <!-- Основной контент страницы -->
+        <section class="title"><img src="img/Solomya_school_colorful.png" alt="Solomya_school"></section>
+
+        <section class="introduction">
+            <div class="introduction-img"><img src="img/Sol_trnspBG_HELLO.png" alt="Sol"></div>
+            <div class="introduction-txt">
+                <p>Мы живём в <strong>Италии</strong>, учимся в итальянской школе и с друзьями общаемся на <strong>итальянском языке</strong>. Наша мама родилась и выросла в <strong>Росси</strong>, поэтому с ней мы разговариваем на <strong>русском</strong>. Наш папа переехал сюда из <strong>Великобритании</strong>, его родной язык - английский, и как вы уже поняли, с ним мы говорим на <strong>английском языке</strong>. <br> <br> А ещё у нас есть бабушка с дедушкой, которые живут в <strong>Германии</strong>, мы часто ездим к ним в гости, потому мы выучили ещё и <strong>немецкий язык</strong>. Кроме того, у нас есть любимые дядя, тётя и двоюродный брат, которые живут в <strong>Польше</strong>, а потому... Ну, вы поняли - мы знаем также <strong>польский язык</strong>. В общем, мы - <b>ПОЛИГЛОТЫ</b>, тоесть знаем много языков. И здесь, в нашей школе мы поможем тебе учить языки и развивать полезные навыки и знания.</p>
+            </div>
+            <div class="introduction-img"><img src="img/Mya_trnspBG_HELLO.png" alt="Mya"></div>
+
+        </section>
+
+
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
