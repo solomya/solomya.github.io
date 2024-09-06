@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solomya school</title>
+
+    <!-- Подключение шрифтов on-line -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/normalize.css">   <!-- Подключение normalize.css ОБЯЗАТЕЛЬНО ДО файла с нашими стилями -->
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <script src="js/jquery-3.7.1.js"></script>  <!-- Подключать БЕЗ defer (загружать в фоносом режиме), иначе не срабатывает -->
+</head>
+
+<body>
+<!-- Верхнее меню выводим из файла topmenu.html -->
+    <div id="includedTopmenu"></div>
+
+<!-- Боковое> меню выводим из файла sidebar.html -->
+    <div id="includedSidebar"></div>
+
+    <main> <!-- Основной контент страницы -->
+        <section class="city-restaurant-introduction">
+            <div class="city-restaurant-introduction-img"><img src="img/2restaurant/japaneserestaurant.png" alt="japaneserestaurant"></div>
+            <div class="city-restaurant-introduction-txt">
+                <p>Мы вчера с родителями ходили <strong>японский ресторан</strong> и ели там <strong>суши и ролы</strong> - блюда <strong>национальной японской кухни</strong>. Мы очень любим суши. А какая твоя <strong>любимая</strong> еда? А что ты <strong>не любишь</strong> кушать? Что любят твои папа и мама?</p>
+                <br>
+                <p>Какой завтрак для тебя самый вкусный? <a href="#" onClick="fullScreen2('city-restaurant-breakfast.html');return false;"">Составишь свой любимый завтрак?</a> Ещё на завтрак полезно выпить стакан свежевыжатого сока. Какой сок тебе нравится? <a href="#" onClick="fullScreen2('city-restaurant-juiceadject.html');return false;"">Приготовим разные соки?</a></p>
+                <br>
+                <p>Представим, что мы открываем <strong>новый ресторан</strong>. Что нам для этого нужно? <a href="#" onClick="fullScreen2('city-restaurant-restworker.html');return false;"">Кого мы пригласим на работу в наш ресторан?</a> А как мы его назовём? Что будет в меню?</p>
+            </div>
+        </section>
+
+
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

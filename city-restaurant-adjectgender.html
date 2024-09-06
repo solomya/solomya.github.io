@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjective gender (restaurant)</title>
+
+    <!-- Подключение шрифтов on-line -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/normalize.css">   <!-- Подключение normalize.css ОБЯЗАТЕЛЬНО ДО файла с нашими стилями -->
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <script src="js/jquery-3.7.1.js"></script>  <!-- Подключать БЕЗ defer (загружать в фоносом режиме), иначе не срабатывает -->
+</head>
+<body>   
+    <section class="game_field">
+        <div class="game_field-header">
+            <button class="game_field-header-btn" id = "checkBtn">ПРОВЕРИТЬ</button>
+             <div class="game_field-title_subtitle">
+                <h1 class="game_field-title">Каой / какая / какое</h1>
+                <div class="game_field-subtitle">ЗАДАНИЕ: Распредели слова по группам, перетягивая их в нужный столбец.</div>
+             </div>
+            <button  class="game_field-header-btn" id = "againBtn">НАЧАТЬ ЗАНОВО</button>
+        </div>
+
+        <div class="game_field-wrapper">
+            <div class="adjectgender-table">
+                <div class="adjectgender-table-header">
+                    <div class="adjectgender-table-header-cell">
+                        <img src="img/2restaurant/adjectgender/cake.png" alt="cake" class="adjectgender-table-header-img">
+                        <img src="img/greenPin.png" alt="pin" class = "adjectgender-table-header-pin">
+                        <div class="adjectgender-table-header-text">Торт</div>
+                    </div>
+                    <div class="adjectgender-table-header-cell">
+                        <img src="img/2restaurant/adjectgender/porridge.png" alt="porridge" class="adjectgender-table-header-img">
+                        <img src="img/redPin.png" alt="pin" class = "adjectgender-table-header-pin">
+                        <div class="adjectgender-table-header-text">Каша</div>
+                    </div>
+                    <div class="adjectgender-table-header-cell">
+                        <img src="img/2restaurant/adjectgender/jam.png" alt="jam" class="adjectgender-table-header-img">
+                        <img src="img/violetPin.png" alt="pin" class = "adjectgender-table-header-pin">
+                        <div class="adjectgender-table-header-text">Варенье</div>
+                    </div>    
+                </div>                
+                <div class="adjectgender-table-row">
+                    <div class="adjectgender-table-cell parent" data-gener="he"></div>
+                    <div class="adjectgender-table-cell parent" data-gener="she"></div>
+                    <div class="adjectgender-table-cell parent" data-gener="it"></div>
+                </div>
+                <div class="adjectgender-table-row">
+                    <div class="adjectgender-table-cell parent" data-gener="he"></div>
+                    <div class="adjectgender-table-cell parent" data-gener="she"></div>
+                    <div class="adjectgender-table-cell parent" data-gener="it"></div>
+                </div>
+                <div class="adjectgender-table-row">
+                    <div class="adjectgender-table-cell parent" data-gener="he"></div>
+                    <div class="adjectgender-table-cell parent" data-gener="she"></div>
+                    <div class="adjectgender-table-cell parent" data-gener="it"></div>
+                </div>
+                <div class="adjectgender-table-row">
+                    <div class="adjectgender-table-cell parent" data-gener="he"></div>
+                    <div class="adjectgender-table-cell parent" data-gener="she"></div>
+                    <div class="adjectgender-table-cell parent" data-gener="it"></div>
+                </div>
+
+            </div>
+                
+            <div class="adjectgender-words" id="parentBig">
+                <!-- Слова для перетаскивания формируются из js -->
+            </div>
+        </div>
+    </section>
+
+
+    <script src="js/modal.js"></script>
+    <script type="module" src="js/adjectgender.js"></script>
+</body>
+</html>

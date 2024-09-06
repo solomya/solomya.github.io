@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Один и много</title>
+    <title>Juice adjectives</title>
 
     <!-- Подключение шрифтов on-line -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/normalize.css">   <!-- Подключение normalize.css ОБЯЗАТЕЛЬНО ДО файла с нашими стилями -->
-    <link rel="stylesheet" href="css/modal.css">    <!-- Для работы с модальными окнами -->
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/style.min.css">
 
     <script src="js/jquery-3.7.1.js"></script>  <!-- Подключать БЕЗ defer (загружать в фоносом режиме), иначе не срабатывает -->
@@ -21,24 +21,20 @@
         <div class="game_field-header">
             <button class="game_field-header-btn" id = "checkBtn">ПРОВЕРИТЬ</button>
              <div class="game_field-title_subtitle">
-                <h1 class="game_field-title">Один и много</h1>
-                <div class="game_field-subtitle">ЗАДАНИЕ: Соедини пазлы с одним и тем же словом. Перетяни карточки в левый блок и поставь рядом с нужным словом.</div>
+                <h1 class="game_field-title">Какой сок выпьем?</h1>
+                <div class="game_field-subtitle">ЗАДАНИЕ: Запиши, какой сок получится из фруктов. Например, в вопросе "Сок из <strong>яблока</strong> называется..." в поле внизу нужно вписать <strong>"яблочный"</strong>.</div>
              </div>
-            <button  class="game_field-header-btn" id="againBtn">НАЧАТЬ ЗАНОВО</button>
+            <button  class="game_field-header-btn" id = "againBtn">НАЧАТЬ ЗАНОВО</button>
         </div>
-
+        
         <div class="game_field-wrapper">
-            <div class="onemany-mainpart">
-                <!-- Карточки формируются в js -->
-            </div>
-                
-            <div class="onemany-secondarypart" id="parentBig">
-                <!-- Карточки формируются в js -->
+            <div class="juiceadject-juices">
+            <!-- Элементы формируем через js -->
             </div>
         </div>
     </section>
 
     <script src="js/modal.js"></script>
-    <script type="module" src="js/onemany.js"></script>
+    <script type="module" src="js/juiceadject.js"></script>
 </body>
 </html>

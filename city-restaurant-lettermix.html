@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Один и много</title>
+    <title>Перепутанные буквы</title>
 
     <!-- Подключение шрифтов on-line -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,24 +21,27 @@
         <div class="game_field-header">
             <button class="game_field-header-btn" id = "checkBtn">ПРОВЕРИТЬ</button>
              <div class="game_field-title_subtitle">
-                <h1 class="game_field-title">Один и много</h1>
-                <div class="game_field-subtitle">ЗАДАНИЕ: Соедини пазлы с одним и тем же словом. Перетяни карточки в левый блок и поставь рядом с нужным словом.</div>
+                <h1 class="game_field-title">Перепутанные буквы</h1>
+                <div class="game_field-subtitle">ЗАДАНИЕ: В словах справа перемешались буквы. Соедини их с правильным словом. Перетяни карточки в левый блок и поставь рядом с нужным словом.</div>
              </div>
             <button  class="game_field-header-btn" id="againBtn">НАЧАТЬ ЗАНОВО</button>
         </div>
 
         <div class="game_field-wrapper">
-            <div class="onemany-mainpart">
+            <div class="lettermix-mainpart">
                 <!-- Карточки формируются в js -->
             </div>
                 
-            <div class="onemany-secondarypart" id="parentBig">
+            <div class="lettermix-secondarypart" id="parentBig">
+                <div class="lettermix-secondarypart-img">
+                    <img src="img/2restaurant/lettermix.png" alt="lettermix">
+                </div>
                 <!-- Карточки формируются в js -->
             </div>
         </div>
     </section>
 
     <script src="js/modal.js"></script>
-    <script type="module" src="js/onemany.js"></script>
+    <script type="module" src="js/lettermix.js"></script>
 </body>
 </html>
