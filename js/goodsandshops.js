@@ -75,7 +75,7 @@ function goodgCreate(array) {
 document.addEventListener("DOMContentLoaded", goodgCreate(goodsImg));
 
 
-/* Перетаскивание слов в таблицу */
+/* Перетаскивание товаров в магазины */
 
 goods.forEach(function(elem) {
     elem.addEventListener('dragstart', function(event) {

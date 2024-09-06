@@ -41,7 +41,7 @@ const alfabet = [
     [ '1', 'МАГАЗИН,', 'В', 'КОТОРОМ', 'МОЖНО', 'КУПИТЬ', 'ХЛЕБ', 'И', 'ПИРОГ.' ]
 ] */
 
-const riddle = [
+const riddleShop = [
     [ 'М', 'А', 'Г', 'А', 'З', 'И', 'Н', ',' ], 
     [ 'В' ], 
     [ 'К', 'О', 'Т', 'О', 'Р', 'О', 'М' ],
@@ -52,9 +52,19 @@ const riddle = [
     [ 'П', 'И', 'Р', 'О', 'Г', '.' ],
 ]
 
-const riddleAnswer = ['Б', 'У', 'Л', 'О', 'Ч', 'Н', 'А', 'Я' ]
+const riddleShopAnswer = ['Б', 'У', 'Л', 'О', 'Ч', 'Н', 'А', 'Я' ]
 
+const riddleRestaurant = [
+    [ 'Р', 'У', 'С', 'С', 'К', 'О', 'Е'      ], 
+    [ 'Б', 'Л', 'Ю', 'Д', 'О', '.'           ], 
+    [ 'С', 'У', 'П'                          ],
+    [ 'С'                                    ], 
+    [ 'К', 'А', 'П', 'У', 'С', 'Т', 'О', 'Й' ], 
+    [ 'И' ],
+    [ 'С', 'В', 'Ё', 'К', 'Л', 'О', 'Й', '.' ],
+]
 
+const riddleRestaurantAnswer = ['Б', 'О', 'Р', 'Щ' ]
 
 // Создание блоков с алфавитом.
 
@@ -143,7 +153,13 @@ function EnryptionCreate(array) {
     });
 } 
 
-document.addEventListener("DOMContentLoaded", EnryptionCreate(riddle));
+if (location.href.endsWith('city-shopping-encryption.html') === true) {
+    document.addEventListener("DOMContentLoaded", EnryptionCreate(riddleShop));
+}
+
+if (location.href.endsWith('city-restaurant-encryption.html') === true) {
+    document.addEventListener("DOMContentLoaded", EnryptionCreate(riddleRestaurant));
+}
 
 // Создание блоков под ответ.
 
@@ -169,7 +185,15 @@ function answerCreate(array) {
     });
 } 
 
-document.addEventListener("DOMContentLoaded", answerCreate(riddleAnswer));
+if (location.href.endsWith('city-shopping-encryption.html') === true) {
+    document.addEventListener("DOMContentLoaded", answerCreate(riddleShopAnswer));
+}
+
+if (location.href.endsWith('city-restaurant-encryption.html') === true) {
+    document.addEventListener("DOMContentLoaded", answerCreate(riddleRestaurantAnswer));
+}
+
+
 
 // Перетаскивание клонируемых блоков, импортируем из commonforgames.js. На вход подаём количество допустимых дочерних элементов (включая изначально существующие доч.эл., если они есть).
 

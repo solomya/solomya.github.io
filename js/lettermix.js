@@ -1,41 +1,40 @@
-const singPlur = [
-[ 'Дом',	    'Дома'      ],
-[ 'Ребёнок',	'Дети'      ],
-[ 'Стол',	    'Столы'     ],
-[ 'Стул',	    'Стулья'    ],
-[ 'Друг',	    'Друзья'    ],
-[ 'Собака',	    'Собаки'    ],
-[ 'Глаз',	    'Глаза'     ],
-[ 'Цветок',	    'Цветы'     ],
-[ 'Брат',	    'Братья'    ],
-[ 'Мост',	    'Мосты'     ],
-[ 'Карандаш',	'Карандаши' ],
-[ 'Лес',	    'Леса'      ],
-[ 'Город',	    'Города'    ],
-[ 'Дерево',	    'Деревья'   ],
-[ 'Человек',	'Люди'      ],
-[ 'Гора',	    'Горы'      ],
-]
-
+const lettermix = [
+    [ 'мороженое', 'можорноее' ],
+    [ 'десерт',	   'реседт'    ],
+    [ 'кофе',	   'ефок'      ],
+    [ 'ресторан',  'ностарер'  ],
+    [ 'рыба',	   'быра'      ],
+    [ 'мясо',	   'мося'      ],
+    [ 'овощи',	   'щоиво'     ],
+    [ 'фрукты',	   'куртыф'    ],
+    [ 'напитки',   'патикин'   ],
+    [ 'вкусно',	   'носувк'    ],
+    [ 'спагетти',  'иттегапс'  ],
+    [ 'пицца',	   'цацип'     ],
+    [ 'торт',	   'ртот'      ],
+    [ 'гамбургер', 'магбергур' ],
+    [ 'обед',	   'бедо'      ],
+    [ 'ужин',	   'нужи'      ],
+    ]
 // Перемешивание массива на входе в случайном порядке - для формирования карточкек слов
 
 import { mixArrey } from './commonforgames.js';
 
-// Создание карточек со словами, которые будем перетаскивать, находятся в блоке с слассом onemany-secondarypart.
+// Создание карточек со словами, которые будем перетаскивать, находятся в блоке слева с классом lettermix-secondarypart.
 
 function cardsCreate(array) {
     let div;
     mixArrey(array);
-    let parent_el = document.querySelector('.onemany-secondarypart')
+    let parent_el = document.querySelector('.lettermix-secondarypart')
 
     array.forEach((attrs) => {
         // создание элемента
         div = document.createElement('div');
       
         // добавление классов и других атрибутов
-        div.classList.add('onemany-plural');
+        div.classList.add('lettermix-mixed');
         div.classList.add('draggabeChild')
-        div.setAttribute('data-basicnoun', attrs[0]);
+        div.setAttribute('data-basicword', attrs[0]);
         div.setAttribute('draggable', 'true');
 
         // текст для созданного div
@@ -46,14 +45,14 @@ function cardsCreate(array) {
     });
 } 
 
-document.addEventListener("DOMContentLoaded", cardsCreate(singPlur));
+document.addEventListener("DOMContentLoaded", cardsCreate(lettermix));
 
-// Создание карточек со словами, для которых будет подбираться пара, их перетаскивать нельзя, находятся в блоке с слассом onemany-mainpart.
+// Создание карточек со словами, для которых будет подбираться пара, их перетаскивать нельзя, находятся в блоке с слассом lettermix-mainpart.
 
 function mainCardsCreate(array) {
     let divNode, divChild;
     mixArrey(array);
-    let parent_el = document.querySelector('.onemany-mainpart')
+    let parent_el = document.querySelector('.lettermix-mainpart')
 
     array.forEach((attrs) => {
         // создание элемента
@@ -61,11 +60,11 @@ function mainCardsCreate(array) {
         divChild = document.createElement('div');
       
         // добавление классов и других атрибутов
-        divNode.classList.add('onemany-couple');
+        divNode.classList.add('lettermix-couple');
         divNode.classList.add('parent')
-        divNode.setAttribute('data-basicnoun', attrs[0]);
+        divNode.setAttribute('data-basicword', attrs[0]);
 
-        divChild.classList.add('onemany-singular');
+        divChild.classList.add('lettermix-word');
 
         // текст для мозданного div
         divChild.innerHTML = attrs[0];
@@ -76,7 +75,7 @@ function mainCardsCreate(array) {
     });
 } 
 
-document.addEventListener("DOMContentLoaded", mainCardsCreate(singPlur));
+document.addEventListener("DOMContentLoaded", mainCardsCreate(lettermix));
 
 // Перетаскивание блоков, импортируем из commonfoegames.js. На вход подаём количество допустимых дочерних элементов (включая изначально существующие доч.эл., если они есть).
 
@@ -123,19 +122,19 @@ const ModalСheckUnsucces = new ItcModal({
 
 function checkBtnClick() {
     let checkList = []; // Создаём массив для хранения результатов проверки
-    let plural = document.querySelectorAll('.onemany-plural'); // Получаем все объекты по классу
+    let mixed = document.querySelectorAll('.lettermix-mixed'); // Получаем все объекты по классу
 
-    plural.forEach(function (elem) {
-        let pluralBasicnoun = elem.dataset.basicnoun; // Получить значение атрибута data-basicnoun 
-        let perentBasicnoun = elem.parentNode.dataset.basicnoun; // Получить basicnoun для родителя
+    mixed.forEach(function (elem) {
+        let mixedlBasicword = elem.dataset.basicword; // Получить значение data-basicword 
+        let perentBasicword = elem.parentNode.dataset.basicword; // Получить data-basicword для родителя
 
         elem.parentNode.style.boxShadow = "rgba(0,0,0,.8) 3px -3px 8px -3px";   // Удаляем красную тень, если ранее были ошибки при проверке
 
         // Заполняем список значениями правильно/не правильно/не определено(если слово не перетащили)
-        if (perentBasicnoun === undefined) {
+        if (perentBasicword === undefined) {
             checkList.push('undefined');
         } else {
-            if (perentBasicnoun != pluralBasicnoun) {
+            if (perentBasicword != mixedlBasicword) {
                 checkList.push('false');
             } else {                
                 checkList.push('true');
@@ -177,13 +176,13 @@ againBtnMod.addEventListener('click', againBtnModClick);
 
 function showerrorsBtnModClick() {
     ModalСheckUnsucces.hide();
-    let plural = document.querySelectorAll('.onemany-plural'); // Получаем все объекты по классу
+    let mixed = document.querySelectorAll('.lettermix-mixed'); // Получаем все объекты по классу
 
-    plural.forEach(function (elem) {
-        let pluralBasicnoun = elem.dataset.basicnoun; // Получить значение атрибута data-basicnoun 
-        let perentBasicnoun = elem.parentNode.dataset.basicnoun; // Получить basicnoun для родителя
+    mixed.forEach(function (elem) {
+        let mixedlBasicword = elem.dataset.basicword; // Получить значение атрибута data-basicword 
+        let perentBasicword = elem.parentNode.dataset.basicword; // Получить basicword для родителя
 
-        if (pluralBasicnoun != perentBasicnoun) {
+        if (mixedlBasicword != perentBasicword) {
             elem.parentNode.style.boxShadow = "5px 5px 10px red";   // Добавить в родительский элемент значение атрибута "стиль"
         } else {
             elem.parentNode.style.boxShadow = "rgba(0,0,0,.8) 3px -3px 8px -3px";
